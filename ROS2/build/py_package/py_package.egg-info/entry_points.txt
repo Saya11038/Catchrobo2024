@@ -1,0 +1,3 @@
+[console_scripts]
+sub_controller_node = py_package.sub_controller_node:main
+
