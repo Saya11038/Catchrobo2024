@@ -28,17 +28,22 @@ void setup() {
 }
 
 void loop() {
-  
 
-  if(digitalRead(3) == HIGH) {
     int vol = 1300;
     esc.writeMicroseconds(vol);
     sprintf(message, "Pulse Width: %d micro sec", vol);
     Serial.println(message);
-  } else {
-    int vol = 0;
-    esc.writeMicroseconds(vol);
-    sprintf(message, "Pulse Width: %d micro sec", vol);
-    Serial.println(message);
-  }
+  
+
+  // if(digitalRead(3) == HIGH) {
+  //   int vol = 1300;
+  //   esc.writeMicroseconds(vol);
+  //   sprintf(message, "Pulse Width: %d micro sec", vol);
+  //   Serial.println(message);
+  // } else {
+  //   int vol = 0;
+  //   esc.writeMicroseconds(vol);
+  //   sprintf(message, "Pulse Width: %d micro sec", vol);
+  //   Serial.println(message);
+  // }
 }
