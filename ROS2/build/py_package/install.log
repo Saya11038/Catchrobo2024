@@ -1,7 +1,7 @@
-/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/sub_controller_node.py
+/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/controller_node.py
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/cybergear.py
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/__init__.py
-/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/__pycache__/sub_controller_node.cpython-310.pyc
+/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/__pycache__/controller_node.cpython-310.pyc
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/__pycache__/cybergear.cpython-310.pyc
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package/__pycache__/__init__.cpython-310.pyc
 /home/saya/Catchrobo2024/ROS2/install/py_package/share/ament_index/resource_index/packages/py_package
@@ -13,4 +13,4 @@
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package-0.0.0-py3.10.egg-info/zip-safe
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package-0.0.0-py3.10.egg-info/SOURCES.txt
 /home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages/py_package-0.0.0-py3.10.egg-info/requires.txt
-/home/saya/Catchrobo2024/ROS2/install/py_package/lib/py_package/sub_controller_node
+/home/saya/Catchrobo2024/ROS2/install/py_package/lib/py_package/controller_node

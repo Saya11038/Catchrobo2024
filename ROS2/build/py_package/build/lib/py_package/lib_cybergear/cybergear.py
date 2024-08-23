@@ -61,7 +61,6 @@ class Cybergear:
         self.master = int_to_bin(master_can)
         self.motor = int_to_bin(motor_can)
         self.angle = 0.0
-        self.ser = serial.Serial('/dev/ttyUSB0', 921600, timeout = 2.0)
 
 
     def enable_motor(self):
@@ -73,10 +72,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "080000000000000000" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -93,10 +92,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "080000000000000000" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -122,22 +121,22 @@ class Cybergear:
         target_angle_hex = frame_head + hex_str + "08" + index_angle + "0000" + hex_angle_param + frame_tail
         target_speed_hex = frame_head + hex_str + "08" + index_speed + "0000" + hex_speed_param + frame_tail
 
-        self.ser.write(bytes.fromhex(target_speed_hex))
-        self.ser.flush()
+        ser.write(bytes.fromhex(target_speed_hex))
+        ser.flush()
         print(target_speed_hex)
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
 
         self.get_motor_state(received_data)
 
-        self.ser.write(bytes.fromhex(target_angle_hex))
-        self.ser.flush()
+        ser.write(bytes.fromhex(target_angle_hex))
+        ser.flush()
         print(target_angle_hex)
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -154,10 +153,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "080100000000000000" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -183,22 +182,22 @@ class Cybergear:
         target_speed_hex = frame_head + hex_str + "08" + index_speed_mode + "0000" + hex_speed_param + frame_tail
         max_current_hex = frame_head + hex_str + "08" + index_max_current + "0000" + hex_max_current_param + frame_tail
 
-        self.ser.write(bytes.fromhex(max_current_hex))
+        ser.write(bytes.fromhex(max_current_hex))
         print(max_current_hex)
-        self.ser.flush()
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
 
         self.get_motor_state(received_data)
 
-        self.ser.write(bytes.fromhex(target_speed_hex))
+        ser.write(bytes.fromhex(target_speed_hex))
         print(target_speed_hex)
-        self.ser.flush()
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -213,24 +212,24 @@ class Cybergear:
         #print(hex(bin_num))
         hex_str = hex(bin_num)[2:] #真ん中のデータ、16進数のstr
 
-        self.ser.flushInput()
-        self.ser.flushOutput()
+        ser.flushInput()
+        ser.flushOutput()
 
         read_param = frame_head + hex_str + "08" + index + "000000000000" + frame_tail
-        self.ser.write(bytes.fromhex(read_param))
-        self.ser.flush()
+        ser.write(bytes.fromhex(read_param))
+        ser.flush()
         print(read_param)
 
         count = 0
 
         while True:
 
-            data = self.ser.read_until(expected=b'\r\n')
+            data = ser.read_until(expected=b'\r\n')
             # if msg is not start with AT, it is not a valid msg
             counter = 0
             while not data.startswith(b'AT'):
                 print("not start with AT received data:", data)
-                data = self.ser.read_until(expected=b'\r\n')
+                data = ser.read_until(expected=b'\r\n')
                 counter += 1
                 if counter > 3:
                     return 1
@@ -377,10 +376,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "0805700000" + "0" + str(mode_data) + "000000" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -409,10 +408,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "08" + hex_angle + hex_velocity + hex_kp + hex_kd + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -422,11 +421,11 @@ class Cybergear:
 
     def power_on(self):
 
-        self.ser.write(bytes.fromhex('41 54 2b 41 54 0d 0a'))
-        self.ser.flush()
+        ser.write(bytes.fromhex('41 54 2b 41 54 0d 0a'))
+        ser.flush()
         print('41542b41540d0a')
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -438,10 +437,10 @@ class Cybergear:
         hex_can = frame_head + "000" + hex_str + "0100" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -453,10 +452,10 @@ class Cybergear:
         hex_can = frame_head + hex_str + "084066313130333103" + frame_tail
         print(hex_can)
 
-        self.ser.write(bytes.fromhex(hex_can))
-        self.ser.flush()
+        ser.write(bytes.fromhex(hex_can))
+        ser.flush()
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -482,22 +481,22 @@ class Cybergear:
         target_iq_hex = frame_head + hex_str + "08" + index_dict["iq_ref"] + "0000" + hex_iq_param + frame_tail
         target_id_hex = frame_head + hex_str + "08" + index_dict["id_ref"] + "0000" + hex_id_param + frame_tail
 
-        self.ser.write(bytes.fromhex(target_iq_hex))
-        self.ser.flush()
+        ser.write(bytes.fromhex(target_iq_hex))
+        ser.flush()
         print(target_iq_hex)
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
 
         self.get_motor_state(received_data)
 
-        self.ser.write(bytes.fromhex(target_id_hex))
-        self.ser.flush()
+        ser.write(bytes.fromhex(target_id_hex))
+        ser.flush()
         print(target_id_hex)
 
-        data = self.ser.read_until(expected=b'\r\n')
+        data = ser.read_until(expected=b'\r\n')
         data = int.from_bytes(data, "little")
         received_data = reverse_hex("0"+hex(data)[2:])
         print(">>" + received_data)
@@ -581,23 +580,23 @@ run_mode_position = '41 54 90 07 eb fc 08 05 70 00 00 01 00 00 00 0d 0a'
 #enable_motor = '41541807ebfc0800000000000000000d0a'
 #stop_motor = '41 54 20 07 eb fc 08 00 00 00 00 00 00 00 00 0d 0a'
 
-# self.ser.write(bytes.fromhex(forward))
+# ser.write(bytes.fromhex(forward))
 
 # time.sleep(10)
 
 
-# self.ser.write(bytes.fromhex(stop))
+# ser.write(bytes.fromhex(stop))
 
 # a = '1A'
 # print(bytes.fromhex(stop))
 
-# self.ser.write(bytes.fromhex(enable_motor))
+# ser.write(bytes.fromhex(enable_motor))
 
 # # #position_control(10, 10)
 
 # time.sleep(10)
 
-#self.ser.write(bytes.fromhex(stop_motor))
+#ser.write(bytes.fromhex(stop_motor))
 # frame_id_bin_str = format(frame_enable_motor, "08b")
 # print(frame_id_bin_str)
 
@@ -612,7 +611,7 @@ run_mode_position = '41 54 90 07 eb fc 08 05 70 00 00 01 00 00 00 0d 0a'
 
 
 # # # シリアルポートとボーレートを設定
-#self.ser = serial.Serial('/dev/ttyUSB0', 921600, timeout = 2.0)
+ser = serial.Serial('/dev/ttyUSB0', 921600, timeout = 2.0)
 
 
 # motor_1 = Cybergear(253, 126)
