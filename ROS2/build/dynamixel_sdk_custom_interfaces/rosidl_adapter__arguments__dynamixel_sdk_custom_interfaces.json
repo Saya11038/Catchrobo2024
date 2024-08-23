@@ -1,0 +1,7 @@
+{
+  "package_name": "dynamixel_sdk_custom_interfaces",
+  "non_idl_tuples": [
+    "/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces:msg/SetPosition.msg",
+    "/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces:srv/GetPosition.srv"
+  ]
+}
