@@ -1,0 +1,42 @@
+[35m[1mConsolidate compiler generated dependencies of target pub_position_node[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/pub_velocity_node.dir/src/pub_velocity_node.cpp.o[0m
+[ 62%] Built target read_write_velocity_node
+[ 62%] Built target read_write_position_node
+[ 75%] [32mBuilding CXX object CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o[0m
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:[m[K In constructor ‘[01m[KJointPubNode::JointPubNode()[m[K’:
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:40:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbutton_data[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   40 |   float [01;35m[Kbutton_data[m[K = 0;
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:[m[K In member function ‘[01m[Kvoid JointPubNode::publishData()[m[K’:
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:67:18:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+   67 |   if([01;35m[Kbutton_data = 1.0[m[K){
+      |      [01;35m[K~~~~~~~~~~~~^~~~~[m[K
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:69:24:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around assignment used as truth value [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+   69 |   }else if([01;35m[Kbutton_data = -1.0[m[K){
+      |            [01;35m[K~~~~~~~~~~~~^~~~~~[m[K
+[ 87%] [32m[1mLinking CXX executable pub_velocity_node[0m
+[ 87%] Built target pub_velocity_node
+[100%] [32m[1mLinking CXX executable pub_position_node[0m
+[100%] Built target pub_position_node
+-- Install configuration: ""
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/read_write_velocity_node
+-- Installing: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/pub_velocity_node
+-- Set runtime path of "/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/pub_velocity_node" to ""
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/read_write_position_node
+-- Installing: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/pub_position_node
+-- Set runtime path of "/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/dynamixel_sdk_examples/pub_position_node" to ""
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/ament_index/resource_index/package_run_dependencies/dynamixel_sdk_examples
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/ament_index/resource_index/parent_prefix_path/dynamixel_sdk_examples
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/environment/ament_prefix_path.sh
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/environment/path.sh
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/environment/path.dsv
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/local_setup.bash
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/local_setup.sh
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/local_setup.zsh
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/local_setup.dsv
+-- Installing: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.dsv
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/ament_index/resource_index/packages/dynamixel_sdk_examples
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/cmake/dynamixel_sdk_examplesConfig.cmake
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/cmake/dynamixel_sdk_examplesConfig-version.cmake
+-- Up-to-date: /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.xml

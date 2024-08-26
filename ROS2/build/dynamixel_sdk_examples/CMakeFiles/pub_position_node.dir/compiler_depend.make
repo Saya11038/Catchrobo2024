@@ -673,8 +673,20 @@ CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o: /home/saya/Catchro
   /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/get_position.hpp \
   /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/detail/get_position__struct.hpp \
   /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/detail/get_position__builder.hpp \
-  /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/detail/get_position__traits.hpp
+  /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/detail/get_position__traits.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joy.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__struct.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__builder.hpp \
+  /opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__traits.hpp \
+  /opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp
 
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__builder.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__struct.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/joy.hpp:
 
 /home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/include/dynamixel_sdk_custom_interfaces/dynamixel_sdk_custom_interfaces/srv/detail/get_position__builder.hpp:
 
@@ -757,6 +769,8 @@ CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o: /home/saya/Catchro
 /opt/ros/humble/include/rclcpp/rclcpp/create_publisher.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_options.hpp:
+
+/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/header__traits.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/node_interfaces/node_waitables_interface.hpp:
 
@@ -1658,6 +1672,8 @@ CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o: /home/saya/Catchro
 
 /opt/ros/humble/include/rclcpp/rclcpp/timer.hpp:
 
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__struct.hpp:
+
 /home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/include/pub_dynamixel_data_node.hpp:
 
 /opt/ros/humble/include/rmw/rmw/events_statuses/incompatible_qos.h:
@@ -1845,6 +1861,8 @@ CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o: /home/saya/Catchro
 /opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:
 
 /opt/ros/humble/include/builtin_interfaces/builtin_interfaces/msg/detail/duration__builder.hpp:
+
+/opt/ros/humble/include/sensor_msgs/sensor_msgs/msg/detail/joy__traits.hpp:
 
 /opt/ros/humble/include/rclcpp/rclcpp/subscription_content_filter_options.hpp:
 

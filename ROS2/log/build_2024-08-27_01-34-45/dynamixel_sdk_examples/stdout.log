@@ -1,0 +1,4 @@
+[ 25%] Built target read_write_velocity_node
+[ 87%] Built target pub_velocity_node
+[ 75%] [32mBuilding CXX object CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o[0m
+[ 87%] Built target read_write_position_node

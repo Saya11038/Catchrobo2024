@@ -1,0 +1,61 @@
+[0.010s] Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples': AMENT_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16
+[0.038s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.161s] -- Found dynamixel_sdk: 3.7.60 (/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/cmake)
+[0.163s] -- Found dynamixel_sdk_custom_interfaces: 3.7.60 (/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/cmake)
+[0.198s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.201s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.210s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.224s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.240s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.279s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[0.334s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.337s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.438s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.567s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.602s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.665s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.725s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.726s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.726s] -- Configured cppcheck include dirs: /home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/include
+[0.726s] -- Configured cppcheck exclude dirs and/or files: 
+[0.727s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.727s] -- Configured cpplint exclude dirs and/or files: 
+[0.727s] -- Added test 'lint_cmake' to check CMake code style
+[0.728s] -- Added test 'uncrustify' to check C / C++ code style
+[0.728s] -- Configured uncrustify additional arguments: 
+[0.729s] -- Added test 'xmllint' to check XML markup files
+[0.731s] -- Configuring done
+[0.748s] -- Generating done
+[0.749s] -- Build files have been written to: /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples
+[0.773s] [35m[1mConsolidate compiler generated dependencies of target read_write_velocity_node[0m
+[0.773s] [35m[1mConsolidate compiler generated dependencies of target pub_velocity_node[0m
+[0.773s] [35m[1mConsolidate compiler generated dependencies of target pub_position_node[0m
+[0.773s] [35m[1mConsolidate compiler generated dependencies of target read_write_position_node[0m
+[0.786s] [ 25%] Built target read_write_velocity_node
+[0.786s] [ 50%] Built target read_write_position_node
+[0.788s] [ 62%] [32mBuilding CXX object CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o[0m
+[0.788s] [ 75%] [32mBuilding CXX object CMakeFiles/pub_velocity_node.dir/src/pub_velocity_node.cpp.o[0m
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:[m[K In constructor ‘[01m[KJointPubNode::JointPubNode()[m[K’:
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:35:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_subscriber_[m[K’ was not declared in this scope; did you mean ‘[01m[Kcount_subscribers[m[K’?
+[2.287s]    35 |   [01;31m[Kjoy_subscriber_[m[K = create_subscription<sensor_msgs::msg::Joy>(
+[2.287s]       |   [01;31m[K^~~~~~~~~~~~~~~[m[K
+[2.287s]       |   [32m[Kcount_subscribers[m[K
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:37:30:[m[K [01;31m[Kerror: [m[K‘[01m[KjoyCallback[m[K’ is not a member of ‘[01m[KJointPubNode[m[K’
+[2.287s]    37 |     std::bind(&JointPubNode::[01;31m[KjoyCallback[m[K, this, std::placeholders::_1)
+[2.287s]       |                              [01;31m[K^~~~~~~~~~~[m[K
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:[m[K At global scope:
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:44:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid JointPubNode::joyCallback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’
+[2.287s]    44 | void [01;31m[KJointPubNode[m[K::joyCallback(const sensor_msgs::msg::Joy::SharedPtr msg)
+[2.287s]       |      [01;31m[K^~~~~~~~~~~~[m[K
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:44:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid JointPubNode::joyCallback(sensor_msgs::msg::Joy_<std::allocator<void> >::SharedPtr)[m[K’
+[2.287s] In file included from [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:19[m[K:
+[2.287s] [01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/include/pub_dynamixel_data_node.hpp:26:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass JointPubNode[m[K’ defined here
+[2.287s]    26 | class [01;36m[KJointPubNode[m[K : public rclcpp::Node
+[2.287s]       |       [01;36m[K^~~~~~~~~~~~[m[K
+[2.828s] gmake[2]: *** [CMakeFiles/pub_position_node.dir/build.make:76: CMakeFiles/pub_position_node.dir/src/pub_position_node.cpp.o] Error 1
+[2.829s] gmake[1]: *** [CMakeFiles/Makefile2:221: CMakeFiles/pub_position_node.dir/all] Error 2
+[2.829s] gmake[1]: *** Waiting for unfinished jobs....
+[3.560s] [ 87%] [32m[1mLinking CXX executable pub_velocity_node[0m
+[3.790s] [ 87%] Built target pub_velocity_node
+[3.791s] gmake: *** [Makefile:146: all] Error 2
+[3.793s] Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples' returned '2': AMENT_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16
