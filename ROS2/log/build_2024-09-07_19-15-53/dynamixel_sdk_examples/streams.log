@@ -1,0 +1,25 @@
+[0.016s] Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples': AMENT_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16
+[0.067s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.211s] -- Found dynamixel_sdk: 3.7.60 (/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/cmake)
+[0.212s] -- Found dynamixel_sdk_custom_interfaces: 3.7.60 (/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/cmake)
+[0.247s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.250s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.259s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.274s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.291s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.331s] -- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)
+[0.380s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.383s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.476s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.604s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.639s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.699s] -- Configuring incomplete, errors occurred!
+[0.699s] See also "/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples/CMakeFiles/CMakeOutput.log".
+[0.699s] [31mCMake Error at /opt/ros/humble/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[0.699s]   ament_target_dependencies() the first argument must be a valid target name
+[0.699s] Call Stack (most recent call first):
+[0.699s]   CMakeLists.txt:52 (ament_target_dependencies)
+[0.699s] 
+[0.699s] [0m
+[0.703s] gmake: *** [Makefile:390: cmake_check_build_system] Error 1
+[0.705s] Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples' returned '2': AMENT_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/opt/ros/humble LD_LIBRARY_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16

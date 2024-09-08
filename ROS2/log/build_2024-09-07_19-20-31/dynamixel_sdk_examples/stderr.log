@@ -1,0 +1,4 @@
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:[m[K In constructor ‘[01m[KJointPubNode::JointPubNode()[m[K’:
+[01m[K/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples/src/pub_position_node.cpp:40:9:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kbutton_data[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+   40 |   float [01;35m[Kbutton_data[m[K = 0.0;
+      |         [01;35m[K^~~~~~~~~~~[m[K
