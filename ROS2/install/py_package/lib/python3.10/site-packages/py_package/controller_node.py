@@ -5,7 +5,7 @@ from py_package.cybergear import Cybergear
 from std_msgs.msg import Int32
 # from std_msgs.msg import Float64
 
-
+esc_msg = Int32()
 
 
 class ControllerNode(Node):
@@ -28,6 +28,12 @@ class ControllerNode(Node):
             10
         )
 
+        self.esp32_publisher = self.create_publisher(
+            Int32,
+            'micro_ros_arduino_node_subscriber',
+            10
+        )
+
         #Cybergear初期化
         self.motor_r = Cybergear(253, 127)
         self.motor_theta = Cybergear(253, 126)
@@ -37,31 +43,35 @@ class ControllerNode(Node):
         # theta → 右向き正
         # z → 上向き正
 
-        self.motor_r.power_on()
-        self.motor_theta.power_on()
-        self.motor_z.power_on()
+        # self.motor_r.power_on()
+        # self.motor_theta.power_on()
+        # self.motor_z.power_on()
 
-        self.motor_r.set_run_mode("location")
-        self.motor_theta.set_run_mode("location")
-        self.motor_z.set_run_mode("location")
+        # self.motor_r.set_run_mode("location")
+        # self.motor_theta.set_run_mode("location")
+        # self.motor_z.set_run_mode("location")
 
-        self.motor_r.enable_motor()
-        self.motor_theta.enable_motor()
-        self.motor_z.enable_motor()
+        # self.motor_r.enable_motor()
+        # self.motor_theta.enable_motor()
+        # self.motor_z.enable_motor()
 
-        self.motor_r.homing_mode()
-        self.motor_theta.homing_mode()
-        self.motor_z.homing_mode()
+        # self.motor_r.homing_mode()
+        # self.motor_theta.homing_mode()
+        # self.motor_z.homing_mode()
 
-        self.motor_r.position_control(0.0, 2.0)
-        self.motor_theta.position_control(0.0, 2.0)
-        self.motor_z.position_control(0.0, 2.0)
+        # self.motor_r.position_control(0.0, 2.0)
+        # self.motor_theta.position_control(0.0, 2.0)
+        # self.motor_z.position_control(0.0, 2.0)
 
         self.axis = [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
         self.button = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
         self.sensor_data = 0
         self.calibration_num = 0
+
+        self.esc_a = 0
+        self.esc_b = 0
+        self.esc_c = 0
 
 
     def joy_callback(self, msg):
@@ -77,15 +87,15 @@ class ControllerNode(Node):
             self.get_logger().info(f'  Button {i}: {button}')
             self.button[i] = button
 
-        if self.axis[6] == 1.0:
-            self.motor_r.position_control(3.0, 1.0)
-            self.motor_theta.position_control(3.0, 1.0)
-        elif self.axis[6] == 0.0:
-            self.motor_r.position_control(3.0, 0.0)
-            self.motor_theta.position_control(3.0, 0.0)
-        elif self.axis[6] == -1.0:
-            self.motor_r.position_control(-3.0, 1.0)
-            self.motor_theta.position_control(-3.0, 1.0)
+        # if self.axis[6] == 1.0:
+        #     self.motor_r.position_control(3.0, 1.0)
+        #     self.motor_theta.position_control(3.0, 1.0)
+        # elif self.axis[6] == 0.0:
+        #     self.motor_r.position_control(3.0, 0.0)
+        #     self.motor_theta.position_control(3.0, 0.0)
+        # elif self.axis[6] == -1.0:
+        #     self.motor_r.position_control(-3.0, 1.0)
+        #     self.motor_theta.position_control(-3.0, 1.0)
             
         # Axis 0,1:左スティック
         # Axis 2:LT?　デフォルトで１
@@ -103,6 +113,46 @@ class ControllerNode(Node):
         # Button 6:Back
         # Button 7:Start
         # Button 8:logicool
+
+        if self.button[1] == 1:
+            # if self.esc_a == 0:
+            #     self.esc_a = 1
+            #     self.esp32_publish()
+            # elif self.esc_a == 1:
+            #     self.esc_a = 0
+            #     self.esp32_publish()
+            self.esc_a = 1
+            self.esp32_publish()
+        else:
+            self.esc_a = 0
+            self.esp32_publish()
+
+        
+        if self.button[2] == 1:
+            # if self.esc_b == 0:
+            #     self.esc_b = 1
+            #     self.esp32_publish()
+            # elif self.esc_b == 1:
+            #     self.esc_b = 0
+            #     self.esp32_publish()
+            self.esc_b = 1
+            self.esp32_publish()
+        else:
+            self.esc_b = 0
+            self.esp32_publish()
+        
+        if self.button[3] == 1:
+            # if self.esc_c == 0:
+            #     self.esc_c = 1
+            #     self.esp32_publish()
+            # elif self.esc_c == 1:
+            #     self.esc_c = 0
+            #     self.esp32_publish()
+            self.esc_b = 1
+            self.esp32_publish()
+        else:
+            self.esc_b = 0
+            self.esp32_publish()
 
         if self.button[7] == 1:
             self.calibrate_all_motors()
@@ -165,6 +215,11 @@ class ControllerNode(Node):
             self.motor_r.position_control(0.0, 2.0)
             self.calibration_num = 3
 
+    def esp32_publish(self):
+
+        esc_msg.data = self.esc_c << 2 | self.esc_b << 1 | self.esc_a
+        self.esp32_publisher.publish(esc_msg)
+
     
     def shutdown(self):
 
@@ -179,6 +234,7 @@ def main(args=None):
     rclpy.spin(sub_controller_node)
     sub_controller_node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()
