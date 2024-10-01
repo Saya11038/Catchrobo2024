@@ -4,8 +4,19 @@ from sensor_msgs.msg import Joy
 from py_package.cybergear import Cybergear
 from std_msgs.msg import Int32
 # from std_msgs.msg import Float64
+import time
+import math
 
 esc_msg = Int32()
+
+z_max = 0.0
+z_min = -8.0
+
+theta_per_rad = math.pi / 2 / 4.70  # rad/rad
+
+r_per_rad = 16.0  # mm/rad
+
+angle_max = 12.566
 
 
 class ControllerNode(Node):
@@ -43,25 +54,25 @@ class ControllerNode(Node):
         # theta → 右向き正
         # z → 上向き正
 
-        # self.motor_r.power_on()
-        # self.motor_theta.power_on()
-        # self.motor_z.power_on()
+        self.motor_r.power_on()
+        self.motor_theta.power_on()
+        self.motor_z.power_on()
 
-        # self.motor_r.set_run_mode("location")
-        # self.motor_theta.set_run_mode("location")
-        # self.motor_z.set_run_mode("location")
+        self.motor_r.set_run_mode("location")
+        self.motor_theta.set_run_mode("location")
+        self.motor_z.set_run_mode("location")
 
-        # self.motor_r.enable_motor()
-        # self.motor_theta.enable_motor()
-        # self.motor_z.enable_motor()
+        self.motor_r.enable_motor()
+        self.motor_theta.enable_motor()
+        self.motor_z.enable_motor()
 
-        # self.motor_r.homing_mode()
-        # self.motor_theta.homing_mode()
-        # self.motor_z.homing_mode()
+        self.motor_r.homing_mode()
+        self.motor_theta.homing_mode()
+        self.motor_z.homing_mode()
 
-        # self.motor_r.position_control(0.0, 2.0)
-        # self.motor_theta.position_control(0.0, 2.0)
-        # self.motor_z.position_control(0.0, 2.0)
+        self.motor_r.position_control(0.0, 2.0)
+        self.motor_theta.position_control(0.0, 2.0)
+        self.motor_z.position_control(0.0, 2.0)
 
         self.axis = [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
         self.button = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -72,6 +83,25 @@ class ControllerNode(Node):
         self.esc_a = 0
         self.esc_b = 0
         self.esc_c = 0
+
+        self.esc_a_before = 0
+        self.esc_b_before = 0
+        self.esc_c_before = 0
+
+        self.x = 0.0
+        self.y = 0.0
+
+        self.new_x = 0.0
+        self.new_y = 0.0
+
+        self.r = 0.0
+        self.theta = 0.0
+
+        self.new_r = 0.0
+        self.new_theta = 0.0
+
+        self.diff_r = 0.0
+        self.diff_theta = 0.0
 
 
     def joy_callback(self, msg):
@@ -87,17 +117,8 @@ class ControllerNode(Node):
             self.get_logger().info(f'  Button {i}: {button}')
             self.button[i] = button
 
-        # if self.axis[6] == 1.0:
-        #     self.motor_r.position_control(3.0, 1.0)
-        #     self.motor_theta.position_control(3.0, 1.0)
-        # elif self.axis[6] == 0.0:
-        #     self.motor_r.position_control(3.0, 0.0)
-        #     self.motor_theta.position_control(3.0, 0.0)
-        # elif self.axis[6] == -1.0:
-        #     self.motor_r.position_control(-3.0, 1.0)
-        #     self.motor_theta.position_control(-3.0, 1.0)
             
-        # Axis 0,1:左スティック
+        # Axis 0,1:左スティック  Axis 0 : 左が正、　Axis 1 : 上が正
         # Axis 2:LT?　デフォルトで１
         # Axis 3,4:右スティック
         # Axis 5:RT  デフォルトで１
@@ -114,51 +135,91 @@ class ControllerNode(Node):
         # Button 7:Start
         # Button 8:logicool
 
-        if self.button[1] == 1:
-            # if self.esc_a == 0:
-            #     self.esc_a = 1
-            #     self.esp32_publish()
-            # elif self.esc_a == 1:
-            #     self.esc_a = 0
-            #     self.esp32_publish()
-            self.esc_a = 1
-            self.esp32_publish()
+
+        if self.calibration_num == 3:
+
+            if not (self.axis[0] == 0.0 and self.axis[1] == 0.0):
+
+                self.calc_xy()
+
+                self.new_x = self.x - self.axis[0] * 10
+                self.new_y = self.y + self.axis[1] * 10
+
+                print(self.new_x, self.new_y)
+                print("\n")
+        
+                self.calc_rtheta()
+
+                # self.diff_r = abs(self.new_r - self.motor_r.angle)
+                # self.diff_theta = abs(self.new_theta - self.motor_theta.angle)
+
+                self.motor_r.position_control(self.new_r, 7.8)  # 4
+                self.motor_theta.position_control(self.new_theta, 2.3)  # 1
+
+
+        if self.button[1] - self.esc_a_before == 1:
+            if self.esc_a == 1:
+                self.esc_a = 0
+                self.esc_a_before = 1
+            else:
+                self.esc_a = 1
+                self.esc_a_before = 1
         else:
-            self.esc_a = 0
-            self.esp32_publish()
+            self.esc_a_before = self.button[1]
 
         
-        if self.button[2] == 1:
-            # if self.esc_b == 0:
-            #     self.esc_b = 1
-            #     self.esp32_publish()
-            # elif self.esc_b == 1:
-            #     self.esc_b = 0
-            #     self.esp32_publish()
-            self.esc_b = 1
-            self.esp32_publish()
+        if self.button[2] - self.esc_b_before == 1:
+            if self.esc_b == 1:
+                self.esc_b = 0
+                self.esc_b_before = 1
+            else:
+                self.esc_b = 1
+                self.esc_b_before = 1
         else:
-            self.esc_b = 0
-            self.esp32_publish()
-        
-        if self.button[3] == 1:
-            # if self.esc_c == 0:
-            #     self.esc_c = 1
-            #     self.esp32_publish()
-            # elif self.esc_c == 1:
-            #     self.esc_c = 0
-            #     self.esp32_publish()
-            self.esc_b = 1
-            self.esp32_publish()
+            self.esc_b_before = self.button[2]
+
+
+        if self.button[3] - self.esc_c_before == 1:
+            if self.esc_c == 1:
+                self.esc_c = 0
+                self.esc_c_before = 1
+            else:
+                self.esc_c = 1
+                self.esc_c_before = 1
         else:
-            self.esc_b = 0
-            self.esp32_publish()
+            self.esc_c_before = self.button[3]
+
+
+        # if self.button[4] == 1 and self.motor_z.angle < z_max + 0.2:
+        #     self.motor_z.speed_control(30.0, 4.0)
+        # else:
+        #     self.motor_z.speed_control(0.0, 2.0)
+
+        # if self.button[5] == 1 and self.motor_z.angle > z_min:
+        #     self.motor_z.speed_control(-8.0, 2.0)
+        # else:
+        #     self.motor_z.speed_control(0.0, 2.0)
+
+        if self.button[4] == 1 and self.motor_z.angle < z_max:
+            self.motor_z.position_control(z_max, -30.0)
+        else:
+            self.motor_z.position_control(z_max, 0.0)
+
+        if self.button[5] == 1:
+            self.motor_z.position_control(z_min, 8.0)
+        else:
+            self.motor_z.position_control(z_min, 0.0)
+
+        if self.button[6] == 1:
+            self.enable()
 
         if self.button[7] == 1:
             self.calibrate_all_motors()
 
         if self.button[8] == 1:
             self.shutdown()
+
+        self.esp32_publish()
 
 
     # ESP32からのデータを受け取るコールバック関数
@@ -186,34 +247,43 @@ class ControllerNode(Node):
             self.motor_theta.speed_control(0.0, 2.0)
             self.motor_theta.set_run_mode("location")
             self.motor_theta.homing_mode()
-            self.motor_theta.position_control(0.0, 2.0)
+            self.motor_theta.position_control(4.70, 2.0)
+            self.theta = 4.70 * theta_per_rad
             self.calibration_num = 1
 
 
     def calibration_z(self):
 
         self.motor_z.set_run_mode("speed")
-        if self.sensor_data != 1:
-            self.motor_z.speed_control(1.0, 2.0)
+        if self.sensor_data != 6:
+            self.motor_z.speed_control(2.5, 2.0)
         else:
             self.motor_z.speed_control(0.0, 2.0)
             self.motor_z.set_run_mode("location")
             self.motor_z.homing_mode()
             self.motor_z.position_control(0.0, 2.0)
+            # self.motor_z.set_run_mode("speed")
             self.calibration_num = 2
 
     
     def calibration_r(self):
 
         self.motor_r.set_run_mode("speed")
-        if self.sensor_data != 0:
-            self.motor_r.speed_control(-1.0, 2.0)
+        if self.sensor_data != 4:
+            self.motor_r.speed_control(-2.0, 2.0)
         else:
             self.motor_r.speed_control(0.0, 2.0)
             self.motor_r.set_run_mode("location")
             self.motor_r.homing_mode()
             self.motor_r.position_control(0.0, 2.0)
+            time.sleep(1)
+            self.motor_r.position_control(angle_max, 4.0)
+            time.sleep(5)
+            self.motor_r.homing_mode()
+            self.motor_r.position_control(0.0, 2.0)
+            self.r = angle_max * r_per_rad
             self.calibration_num = 3
+
 
     def esp32_publish(self):
 
@@ -221,11 +291,67 @@ class ControllerNode(Node):
         self.esp32_publisher.publish(esc_msg)
 
     
+    def enable(self):
+
+        self.motor_r.set_run_mode("location")
+        self.motor_theta.set_run_mode("location")
+        self.motor_z.set_run_mode("location")
+
+        self.motor_r.enable_motor()
+        self.motor_theta.enable_motor()
+        self.motor_z.enable_motor()
+
+        self.calibration_num = 0
+
+    
     def shutdown(self):
 
         self.motor_r.stop_motor()
         self.motor_theta.stop_motor()
         self.motor_z.stop_motor()
+
+    
+    def calc_xy(self):
+
+        self.motor_r.update_state()
+        self.motor_theta.update_state()
+        self.motor_z.update_state()
+
+        self.x = - (angle_max + self.motor_r.angle) * r_per_rad * math.cos(self.motor_theta.angle * theta_per_rad)
+        self.y = (angle_max + self.motor_r.angle) * r_per_rad * math.sin(self.motor_theta.angle * theta_per_rad)
+
+        print(self.x, self.y)
+        print("\n")
+
+# 右　354.95mm  左　345.047
+    
+    def calc_rtheta(self):
+
+        # if self.new_y < 0:
+        #     if self.new_x < 100 and self.new_x > -100:
+        #         self.new_x = self.x
+        #         self.new_y = self.y
+
+        self.new_r = math.sqrt(self.new_x * self.new_x + self.new_y * self.new_y)
+
+        if self.new_x > 0 and self.new_y < 0:
+            self.new_theta = math.atan2(- self.new_y, self.new_x) +  math.pi
+        elif self.new_x == 0:
+            self.new_theta = math.pi / 2
+        else:
+            self.new_theta = math.atan2(self.new_y, - self.new_x)
+
+        # print(self.new_r, self.new_theta)
+        # print("\n")
+
+        print(-self.new_r * math.cos(self.new_theta), self.new_r * math.sin(self.new_theta))
+        print("\n")
+
+        self.new_r = (self.new_r - angle_max * r_per_rad) / r_per_rad
+        self.new_theta = self.new_theta / theta_per_rad
+
+        print(self.new_r, self.new_theta)
+        print("\n")
 
         
 def main(args=None):

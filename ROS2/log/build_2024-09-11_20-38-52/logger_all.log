@@ -1,0 +1,364 @@
+[0.060s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.060s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x71e3f4e30ca0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x71e3f4f29840>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x71e3f4f29840>>)
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.147s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.147s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/saya/Catchrobo2024/ROS2'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.147s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.154s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'ros'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['cmake', 'python']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'cmake'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'python'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extensions ['python_setup_py']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK) by extension 'python_setup_py'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extensions ['ignore', 'ignore_ament_install']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extension 'ignore'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extension 'ignore_ament_install'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extensions ['colcon_pkg']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extension 'colcon_pkg'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extensions ['colcon_meta']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extension 'colcon_meta'
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extensions ['ros']
+[0.155s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk) by extension 'ros'
+[0.157s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_package/DynamixelSDK/dynamixel_sdk' with type 'ros.ament_cmake' and name 'dynamixel_sdk'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extension 'ignore'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extension 'ignore_ament_install'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extensions ['colcon_pkg']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extension 'colcon_pkg'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extensions ['colcon_meta']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extension 'colcon_meta'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extensions ['ros']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces) by extension 'ros'
+[0.157s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces' with type 'ros.ament_cmake' and name 'dynamixel_sdk_custom_interfaces'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extensions ['ignore', 'ignore_ament_install']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extension 'ignore'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extension 'ignore_ament_install'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extensions ['colcon_pkg']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extension 'colcon_pkg'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extensions ['colcon_meta']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extension 'colcon_meta'
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extensions ['ros']
+[0.157s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_package/DynamixelSDK/dynamixel_sdk_examples) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_package/DynamixelSDK/dynamixel_sdk_examples' with type 'ros.ament_cmake' and name 'dynamixel_sdk_examples'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extensions ['ignore', 'ignore_ament_install']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extension 'ignore'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extension 'ignore_ament_install'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extensions ['colcon_pkg']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extension 'colcon_pkg'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extensions ['colcon_meta']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extension 'colcon_meta'
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extensions ['ros']
+[0.158s] Level 1:colcon.colcon_core.package_identification:_identify(src/py_package) by extension 'ros'
+[0.158s] DEBUG:colcon.colcon_core.package_identification:Package 'src/py_package' with type 'ros.ament_python' and name 'py_package'
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.158s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.159s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.170s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.172s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/saya/Catchrobo2024/ROS2/install
+[0.172s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 10 installed packages in /home/saya/ros2_ws/install
+[0.173s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 338 installed packages in /opt/ros/humble
+[0.180s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.203s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_target' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_clean_cache' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_clean_first' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'cmake_force_configure' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'ament_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'catkin_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.204s] DEBUG:colcon.colcon_core.verb:Building package 'dynamixel_sdk' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk', 'merge_install': False, 'path': '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk', 'symlink_install': False, 'test_result_base': None}
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_custom_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.204s] DEBUG:colcon.colcon_core.verb:Building package 'dynamixel_sdk_custom_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces', 'merge_install': False, 'path': '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces', 'symlink_install': False, 'test_result_base': None}
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_target' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_clean_cache' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_clean_first' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'cmake_force_configure' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'ament_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'catkin_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'py_package' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.204s] DEBUG:colcon.colcon_core.verb:Building package 'py_package' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/saya/Catchrobo2024/ROS2/build/py_package', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/saya/Catchrobo2024/ROS2/install/py_package', 'merge_install': False, 'path': '/home/saya/Catchrobo2024/ROS2/src/py_package', 'symlink_install': False, 'test_result_base': None}
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_target' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_clean_cache' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_clean_first' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'cmake_force_configure' from command line to 'False'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'ament_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'catkin_cmake_args' from command line to 'None'
+[0.204s] Level 5:colcon.colcon_core.verb:set package 'dynamixel_sdk_examples' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.205s] DEBUG:colcon.colcon_core.verb:Building package 'dynamixel_sdk_examples' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples', 'merge_install': False, 'path': '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples', 'symlink_install': False, 'test_result_base': None}
+[0.205s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.205s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.206s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk' with build type 'ament_cmake'
+[0.206s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk'
+[0.207s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.207s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.207s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.209s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces' with build type 'ament_cmake'
+[0.209s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_custom_interfaces'
+[0.210s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.210s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.212s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/saya/Catchrobo2024/ROS2/src/py_package' with build type 'ament_python'
+[0.212s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_package', 'ament_prefix_path')
+[0.212s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/ament_prefix_path.ps1'
+[0.212s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/ament_prefix_path.dsv'
+[0.213s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/ament_prefix_path.sh'
+[0.213s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.213s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.219s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk -- -j16 -l16
+[0.224s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces -- -j16 -l16
+[0.413s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/saya/Catchrobo2024/ROS2/src/py_package'
+[0.414s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.414s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.420s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk -- -j16 -l16
+[0.475s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk
+[0.485s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk)
+[0.485s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk
+[0.488s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk' for CMake module files
+[0.488s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk' for CMake config files
+[0.488s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk', 'cmake_prefix_path')
+[0.489s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.ps1'
+[0.489s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.dsv'
+[0.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.sh'
+[0.490s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib'
+[0.490s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk', 'ld_library_path_lib')
+[0.490s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.ps1'
+[0.491s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.dsv'
+[0.491s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.sh'
+[0.491s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/bin'
+[0.491s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib/pkgconfig/dynamixel_sdk.pc'
+[0.491s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib/python3.10/site-packages'
+[0.492s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/bin'
+[0.492s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.ps1'
+[0.492s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.dsv'
+[0.493s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.sh'
+[0.493s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.bash'
+[0.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.zsh'
+[0.494s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/colcon-core/packages/dynamixel_sdk)
+[0.496s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces -- -j16 -l16
+[0.543s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk)
+[0.543s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk' for CMake module files
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk' for CMake config files
+[0.544s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk', 'cmake_prefix_path')
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.ps1'
+[0.544s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.dsv'
+[0.545s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/cmake_prefix_path.sh'
+[0.545s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib'
+[0.545s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk', 'ld_library_path_lib')
+[0.545s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.ps1'
+[0.546s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.dsv'
+[0.546s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/hook/ld_library_path_lib.sh'
+[0.546s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/bin'
+[0.546s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib/pkgconfig/dynamixel_sdk.pc'
+[0.546s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/lib/python3.10/site-packages'
+[0.546s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/bin'
+[0.547s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.ps1'
+[0.547s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.dsv'
+[0.547s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.sh'
+[0.548s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.bash'
+[0.548s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/dynamixel_sdk/package.zsh'
+[0.548s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk/share/colcon-core/packages/dynamixel_sdk)
+[0.585s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces
+[0.626s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk_custom_interfaces)
+[0.626s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_custom_interfaces
+[0.626s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces' for CMake module files
+[0.627s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces' for CMake config files
+[0.627s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_custom_interfaces', 'cmake_prefix_path')
+[0.627s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.ps1'
+[0.628s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.dsv'
+[0.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.sh'
+[0.628s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib'
+[0.628s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_custom_interfaces', 'ld_library_path_lib')
+[0.628s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.ps1'
+[0.629s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.dsv'
+[0.629s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.sh'
+[0.629s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/bin'
+[0.629s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib/pkgconfig/dynamixel_sdk_custom_interfaces.pc'
+[0.629s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib/python3.10/site-packages'
+[0.629s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/bin'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.ps1'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.dsv'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.sh'
+[0.630s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.bash'
+[0.631s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.zsh'
+[0.631s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/colcon-core/packages/dynamixel_sdk_custom_interfaces)
+[0.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/src/py_package': PYTHONPATH=/home/saya/Catchrobo2024/ROS2/build/py_package/prefix_override:/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_package build --build-base /home/saya/Catchrobo2024/ROS2/build/py_package/build install --record /home/saya/Catchrobo2024/ROS2/build/py_package/install.log --single-version-externally-managed install_data
+[0.706s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk_custom_interfaces)
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces' for CMake module files
+[0.707s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces' for CMake config files
+[0.707s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_custom_interfaces', 'cmake_prefix_path')
+[0.707s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.ps1'
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.dsv'
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/cmake_prefix_path.sh'
+[0.708s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib'
+[0.708s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_custom_interfaces', 'ld_library_path_lib')
+[0.708s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.ps1'
+[0.709s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.dsv'
+[0.709s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/hook/ld_library_path_lib.sh'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/bin'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib/pkgconfig/dynamixel_sdk_custom_interfaces.pc'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/lib/python3.10/site-packages'
+[0.709s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/bin'
+[0.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.ps1'
+[0.710s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.dsv'
+[0.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.sh'
+[0.710s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.bash'
+[0.711s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/dynamixel_sdk_custom_interfaces/package.zsh'
+[0.711s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces/share/colcon-core/packages/dynamixel_sdk_custom_interfaces)
+[0.711s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples' with build type 'ament_cmake'
+[0.711s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/saya/Catchrobo2024/ROS2/src/cpp_package/DynamixelSDK/dynamixel_sdk_examples'
+[0.711s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.711s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.724s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples': CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16
+[0.784s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples' returned '0': CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --build /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples -- -j16 -l16
+[0.818s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples': CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples
+[0.827s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk_examples)
+[0.827s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples' returned '0': CMAKE_PREFIX_PATH=/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_custom_interfaces:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk:/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples:/home/saya/ros2_ws/install/polygon_plugins:/home/saya/ros2_ws/install/polygon_base:/home/saya/ros2_ws/install/more_interfaces:/home/saya/ros2_ws/install/cpp_topic_pubsub:/home/saya/ros2_ws/install/cpp_srvcli:/home/saya/ros2_ws/install/cpp_server_client:/home/saya/ros2_ws/install/cpp_pubsub:/home/saya/ros2_ws/install/cpp_parameters:/home/saya/ros2_ws/install/bag_recorder_nodes:/home/saya/ros2_ws/install/action_tutorials_cpp:/home/saya/Catchrobo2024/ROS2/install/py_package:/opt/ros/humble /usr/bin/cmake --install /home/saya/Catchrobo2024/ROS2/build/dynamixel_sdk_examples
+[0.827s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples' for CMake module files
+[0.827s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples' for CMake config files
+[0.828s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_examples', 'cmake_prefix_path')
+[0.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.ps1'
+[0.828s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.dsv'
+[0.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.sh'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/bin'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/pkgconfig/dynamixel_sdk_examples.pc'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/python3.10/site-packages'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/bin'
+[0.829s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.ps1'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.dsv'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.sh'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.bash'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.zsh'
+[0.830s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/colcon-core/packages/dynamixel_sdk_examples)
+[0.865s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dynamixel_sdk_examples)
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples' for CMake module files
+[0.866s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples' for CMake config files
+[0.866s] Level 1:colcon.colcon_core.shell:create_environment_hook('dynamixel_sdk_examples', 'cmake_prefix_path')
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.ps1'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.dsv'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/hook/cmake_prefix_path.sh'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/bin'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/pkgconfig/dynamixel_sdk_examples.pc'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/lib/python3.10/site-packages'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/bin'
+[0.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.ps1'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.dsv'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.sh'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.bash'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/dynamixel_sdk_examples/package.zsh'
+[0.869s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/dynamixel_sdk_examples/share/colcon-core/packages/dynamixel_sdk_examples)
+[0.891s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package' for CMake module files
+[0.892s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/saya/Catchrobo2024/ROS2/src/py_package' returned '0': PYTHONPATH=/home/saya/Catchrobo2024/ROS2/build/py_package/prefix_override:/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/py_package build --build-base /home/saya/Catchrobo2024/ROS2/build/py_package/build install --record /home/saya/Catchrobo2024/ROS2/build/py_package/install.log --single-version-externally-managed install_data
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package' for CMake config files
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package/lib'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package/bin'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package/lib/pkgconfig/py_package.pc'
+[0.892s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package/lib/python3.10/site-packages'
+[0.892s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_package', 'pythonpath')
+[0.892s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/pythonpath.ps1'
+[0.893s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/pythonpath.dsv'
+[0.893s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/hook/pythonpath.sh'
+[0.893s] Level 1:colcon.colcon_core.environment:checking '/home/saya/Catchrobo2024/ROS2/install/py_package/bin'
+[0.893s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(py_package)
+[0.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/package.ps1'
+[0.894s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/package.dsv'
+[0.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/package.sh'
+[0.894s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/package.bash'
+[0.895s] INFO:colcon.colcon_core.shell:Creating package script '/home/saya/Catchrobo2024/ROS2/install/py_package/share/py_package/package.zsh'
+[0.895s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/saya/Catchrobo2024/ROS2/install/py_package/share/colcon-core/packages/py_package)
+[0.895s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.895s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.895s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.895s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.899s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.899s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.899s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.911s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.911s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/saya/Catchrobo2024/ROS2/install/local_setup.ps1'
+[0.912s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/saya/Catchrobo2024/ROS2/install/_local_setup_util_ps1.py'
+[0.912s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/saya/Catchrobo2024/ROS2/install/setup.ps1'
+[0.913s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/saya/Catchrobo2024/ROS2/install/local_setup.sh'
+[0.914s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/saya/Catchrobo2024/ROS2/install/_local_setup_util_sh.py'
+[0.914s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/saya/Catchrobo2024/ROS2/install/setup.sh'
+[0.915s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/saya/Catchrobo2024/ROS2/install/local_setup.bash'
+[0.916s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/saya/Catchrobo2024/ROS2/install/setup.bash'
+[0.917s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/saya/Catchrobo2024/ROS2/install/local_setup.zsh'
+[0.917s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/saya/Catchrobo2024/ROS2/install/setup.zsh'

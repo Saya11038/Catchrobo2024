@@ -2,6 +2,7 @@ import serial
 import time
 import struct
 import math
+import pandas as pd
 
 frame_head = "4154" #hex_str
 frame_tail = "0d0a" #hex_str
@@ -52,6 +53,7 @@ frame_homing_mode = 0b00000110
 frame_motion_control = 0b00000001
 frame_power_on = 0b00010011
 frame_get_device = 0b00000000
+frame_set_canid = 0b00000110
 
 
 class Cybergear:
@@ -61,7 +63,7 @@ class Cybergear:
         self.master = int_to_bin(master_can)
         self.motor = int_to_bin(motor_can)
         self.angle = 0.0
-        self.ser = serial.Serial('/dev/ttyUSB0', 921600, timeout = 2.0)
+        self.ser = serial.Serial('/dev/ttyUSB1', 921600, timeout = 2.0)
 
 
     def enable_motor(self):
@@ -296,7 +298,7 @@ class Cybergear:
         not_calibrated = bin(not_calibrated)[-1:]
         not_calibrated = int(not_calibrated, 2)
 
-        print("Motor ID: ", motor_can_id)
+        # print("Motor ID: ", motor_can_id)
 
         if(under_voltage == 1):
             print("Under Voltage Fault")
@@ -321,10 +323,10 @@ class Cybergear:
         torque = linear_mapping(current_torque, -12.0, 12.0)
         temp = current_temp / 10.0
 
-        print("Angle:", angle, "rad")
-        print("Angle Velocity:", angle_vel, "rad/s")
-        print("Torque:", torque, "Nm")
-        print("Temperature:", temp, "℃")
+        # print("Angle:", angle, "rad")
+        # print("Angle Velocity:", angle_vel, "rad/s")
+        # print("Torque:", torque, "Nm")
+        # print("Temperature:", temp, "℃")
 
         self.angle = angle
 
@@ -505,6 +507,37 @@ class Cybergear:
         self.get_motor_state(received_data)
 
 
+    def get_motor_angle(self, received_data):
+
+        current_angle = int(received_data[14:18], 16)
+        angle = linear_mapping(current_angle, -4*math.pi, 4*math.pi)
+        
+        self.angle = angle
+
+
+
+    def update_state(self):
+
+        bin_num = frame_set_canid << 24 | self.motor << 16 | self.master << 8 | self.motor #2進数のまま結合
+        bin_num = bin_num << 3 | 0b100 #3bit左にずらし、右端を100にする
+        # print(hex(bin_num))
+        hex_str = hex(bin_num)[2:]
+        hex_can = frame_head + hex_str + "00" + frame_tail
+        print(hex_can)
+
+        self.ser.write(bytes.fromhex(hex_can))
+        self.ser.flush()
+
+        data = self.ser.read_until(expected=b'\r\n')
+        data = int.from_bytes(data, "little")
+        received_data = reverse_hex("0"+hex(data)[2:])
+        print(">>" + received_data)
+
+        self.get_motor_angle(received_data)
+
+
+
+
 
 #入力された整数値を2進数の数値に変える関数
 def int_to_bin(num_deci):
@@ -565,6 +598,36 @@ def hex_to_float(hex_str):
     # バイト列を浮動小数点数に変換
     float_num = struct.unpack('!f', byte_array)[0]
     return float_num
+
+# 指定された秒数motor_arrayに格納されたモーターの状態をcsvに記録する
+def upload_to_csv(motor_array, seconds):
+
+    start_time = time.time()
+
+    file_path = 'output.csv'
+
+    try:
+        df = pd.read_csv(file_path)
+    except (FileNotFoundError, pd.errors.EmptyDataError):
+        # ファイルが存在しない場合、空のデータフレームを作成
+        df = pd.DataFrame(columns=['1', '2', '3'])  # ヘッダーを指定
+
+
+    while time.time() - start_time < seconds:
+
+        new_data = {}
+        num = 1
+
+        for i in motor_array:
+            i.update_state()
+            new_data[str(num)] = i.angle
+            num += 1
+
+        # データを指定した列に追加
+        df = pd.concat([df, pd.DataFrame([new_data])], ignore_index=True)
+
+        # 更新したデータフレームをCSVに書き込む
+        df.to_csv(file_path, index=False)
 
 
 
@@ -714,3 +777,41 @@ run_mode_position = '41 54 90 07 eb fc 08 05 70 00 00 01 00 00 00 0d 0a'
 # hex_angle_param = struct.unpack('!I', struct.pack('!f', target_angle))[0]
 # hex_angle_param = reverse_hex(format(hex_angle_param, "08x"))
 # print(hex_angle_param)
+
+# ser = serial.Serial('/dev/ttyUSB0', 921600, timeout = 2.0)
+
+
+# motor_1 = Cybergear(253, 125)
+# motor_2 = Cybergear(253, 127)
+# motor_3 = Cybergear(253, 126)
+
+# Motor = [motor_1, motor_2, motor_3]
+
+# motor_1.power_on()
+# motor_2.power_on()
+# motor_3.power_on()
+
+# motor_1.set_run_mode("current")
+# motor_2.set_run_mode("current")
+# motor_3.set_run_mode("current")
+
+# motor_1.enable_motor()
+# motor_2.enable_motor()
+# motor_3.enable_motor()
+
+# motor_1.homing_mode()
+# motor_2.homing_mode()
+# motor_3.homing_mode()
+
+
+
+# motor_1.current_control(0.0, 0.0)
+# motor_2.current_control(0.0, 0.0)
+# motor_3.current_control(0.0, 0.0)
+
+
+# upload_to_csv(Motor, 10)
+
+# motor_1.stop_motor()
+# motor_2.stop_motor()
+# motor_3.stop_motor()

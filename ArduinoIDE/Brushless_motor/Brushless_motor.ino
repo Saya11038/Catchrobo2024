@@ -2,7 +2,7 @@
 
 #include <Servo.h>
 
-#define ESC_Pin 6     //ESC 出力ピン
+#define ESC_Pin 12     //ESC 出力ピン
 char message[50];
 
 //ESC設定(μs)
