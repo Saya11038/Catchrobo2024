@@ -106,15 +106,15 @@ class ControllerNode(Node):
 
     def joy_callback(self, msg):
         # Axesの値を表示
-        self.get_logger().info('Axes:')
+        # self.get_logger().info('Axes:')
         for i, axis in enumerate(msg.axes):
-            self.get_logger().info(f'  Axis {i}: {axis}')
+            # self.get_logger().info(f'  Axis {i}: {axis}')
             self.axis[i] = axis
 
         # Buttonsの値を表示
-        self.get_logger().info('Buttons:')
+        # self.get_logger().info('Buttons:')
         for i, button in enumerate(msg.buttons):
-            self.get_logger().info(f'  Button {i}: {button}')
+            # self.get_logger().info(f'  Button {i}: {button}')
             self.button[i] = button
 
             
@@ -138,23 +138,52 @@ class ControllerNode(Node):
 
         if self.calibration_num == 3:
 
+            self.motor_theta.set_run_mode("motion_control")
+            self.motor_z.set_run_mode("motion_control")
+            self.motor_r.set_run_mode("motion_control")
+
+            # self.motor_theta.set_run_mode("speed")
+            # self.motor_z.set_run_mode("speed")
+            # self.motor_r.set_run_mode("speed")
+
+
             if not (self.axis[0] == 0.0 and self.axis[1] == 0.0):
 
                 self.calc_xy()
 
-                self.new_x = self.x - self.axis[0] * 10
-                self.new_y = self.y + self.axis[1] * 10
+                self.new_x = self.x - self.axis[0] * 8
+                self.new_y = self.y + self.axis[1] * 8
 
-                print(self.new_x, self.new_y)
+                # if self.new_y < 0.0 and abs(self.new_x) < 130.0:
+                #     self.new_y = 10.0
+
+                if self.y > 0 and self.new_y < 0:
+                    if abs(self.x) < 120.0:
+                        self.new_y = 10.0
+
+
+                print("目標座標", self.new_x, self.new_y)
                 print("\n")
         
                 self.calc_rtheta()
 
+                # if abs(self.new_r) > 12.0:
+                #     self.new_r = 12.0
+                #     self.new_theta = self.theta
+
                 # self.diff_r = abs(self.new_r - self.motor_r.angle)
                 # self.diff_theta = abs(self.new_theta - self.motor_theta.angle)
 
-                self.motor_r.position_control(self.new_r, 7.8)  # 4
-                self.motor_theta.position_control(self.new_theta, 2.3)  # 1
+                # self.motor_r.position_control(self.new_r, 7.8)  # 4
+                # self.motor_theta.position_control(self.new_theta, 2.3)  # 1
+
+                if self.new_r < 12.0 and self.new_r > -10.5:
+
+                    self.motor_r.motion_control(self.new_r, 0.1, 7.0, 0.8)
+                    self.motor_theta.motion_control(self.new_theta, 0.05, 4.0, 1.0)
+
+                # self.motor_r.speed_control(0.05 * (self.new_r - self.r), 2.0)
+                # self.motor_theta.speed_control(0.1 * (self.new_theta - self.theta), 2.0)
 
 
         if self.button[1] - self.esc_a_before == 1:
@@ -200,15 +229,19 @@ class ControllerNode(Node):
         # else:
         #     self.motor_z.speed_control(0.0, 2.0)
 
-        if self.button[4] == 1 and self.motor_z.angle < z_max:
-            self.motor_z.position_control(z_max, -30.0)
+        if self.button[4] == 1 and abs(self.motor_z.torque) < 1.8:
+            # self.motor_z.position_control(z_max, -30.0)
+            self.motor_z.motion_control(self.motor_z.angle + 0.5, 1.0, 6.5, 0.8, 3.2)
         else:
-            self.motor_z.position_control(z_max, 0.0)
+            # self.motor_z.position_control(z_max, 0.0)
+            self.motor_z.motion_control(z_max, 0.0, 0.0, 0.0)
 
-        if self.button[5] == 1:
-            self.motor_z.position_control(z_min, 8.0)
+        if self.button[5] == 1 and abs(self.motor_z.torque) < 1.8:
+            # self.motor_z.position_control(z_min, 8.0)
+            self.motor_z.motion_control(self.motor_z.angle - 0.5, 1.0, 9.0, 0.8, 1.5)
         else:
-            self.motor_z.position_control(z_min, 0.0)
+            # self.motor_z.position_control(z_min, 0.0)
+            self.motor_z.motion_control(z_min, 0.0, 0.0, 0.0)
 
         if self.button[6] == 1:
             self.enable()
@@ -274,13 +307,19 @@ class ControllerNode(Node):
         else:
             self.motor_r.speed_control(0.0, 2.0)
             self.motor_r.set_run_mode("location")
+            # self.motor_r.set_run_mode("motion_control")
             self.motor_r.homing_mode()
             self.motor_r.position_control(0.0, 2.0)
+            # self.motor_r.motion_control(0.0, 1.0, 2.0, 0.5)
             time.sleep(1)
             self.motor_r.position_control(angle_max, 4.0)
+            # self.motor_r.motion_control(angle_max, 1.0, 2.0, 0.5)
             time.sleep(5)
+            self.motor_r.set_run_mode("motion_control")
+            self.motor_r.motion_control(angle_max, 1.0, 2.0, 0.5)
             self.motor_r.homing_mode()
-            self.motor_r.position_control(0.0, 2.0)
+            # self.motor_r.position_control(0.0, 2.0)
+            self.motor_r.motion_control(0.0, 1.0, 2.0, 0.5)
             self.r = angle_max * r_per_rad
             self.calibration_num = 3
 
@@ -293,9 +332,9 @@ class ControllerNode(Node):
     
     def enable(self):
 
-        self.motor_r.set_run_mode("location")
-        self.motor_theta.set_run_mode("location")
-        self.motor_z.set_run_mode("location")
+        self.motor_r.set_run_mode("motion_control")
+        self.motor_theta.set_run_mode("motion_control")
+        self.motor_z.set_run_mode("motion_control")
 
         self.motor_r.enable_motor()
         self.motor_theta.enable_motor()
@@ -320,7 +359,10 @@ class ControllerNode(Node):
         self.x = - (angle_max + self.motor_r.angle) * r_per_rad * math.cos(self.motor_theta.angle * theta_per_rad)
         self.y = (angle_max + self.motor_r.angle) * r_per_rad * math.sin(self.motor_theta.angle * theta_per_rad)
 
-        print(self.x, self.y)
+        self.r = (angle_max + self.motor_r.angle) * r_per_rad
+        self.theta = self.motor_theta.angle * theta_per_rad
+
+        print("現在のx,y座標", self.x, self.y)
         print("\n")
 
 # 右　354.95mm  左　345.047
@@ -344,13 +386,13 @@ class ControllerNode(Node):
         # print(self.new_r, self.new_theta)
         # print("\n")
 
-        print(-self.new_r * math.cos(self.new_theta), self.new_r * math.sin(self.new_theta))
+        print("座標変換後の目標座標", -self.new_r * math.cos(self.new_theta), self.new_r * math.sin(self.new_theta))
         print("\n")
 
         self.new_r = (self.new_r - angle_max * r_per_rad) / r_per_rad
         self.new_theta = self.new_theta / theta_per_rad
 
-        print(self.new_r, self.new_theta)
+        print("rθの目標値", self.new_r, self.new_theta)
         print("\n")
 
         
